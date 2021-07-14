@@ -1,0 +1,63 @@
+# 用户信息
+[UserInfo] 
+userid = 19*****
+name = 姓名
+# 接受签到信息推送的邮箱
+mail = *****@qq.com
+# 签到信息
+[QianDao]
+# 这个不用动
+form_id  =  18400
+# 位置 直接复制上一次登录的地址即可
+v =  河南省,***市,***县,X***|32.81855,***.11861
+# 0 为是，1为否
+# 是否接种过疫苗
+a   =  0
+# 今日温度
+b   =  36.5
+# 是否有症状
+c   =  1
+# 是否发热（37.3度及以上）
+d   =  1
+# 是否被确诊为新型冠状病毒肺炎病例
+e   =  1
+# 是否是高度疑似新型冠状病毒肺炎人员
+f   =  1
+# 若高度疑似，具体隔离措施为
+g   =   
+# 您是否在校
+q   =  1
+# 假期（近14天）是否去过中高风险区
+h   =  1
+# 假期（近14天）中是否与确诊的新型冠状病毒人员接触
+i   =  1
+# 假期（近14天）中是否途径/中转/停留中高风险区
+j   =  1
+# 近期您的家人朋友，是否有发热、咳嗽、乏力、呼吸困难等症状
+k   =  1
+# 近14天是否与来自中高风险区其他地市的亲朋好友或有发热、咳嗽、呼吸困难、感冒等症状的亲友接触过
+l   =  1
+# 今日心里健康状况
+# 0：健康 1：偶有情绪波动但能自我调节 2：较差，需要心理协助
+m   =  0
+# 是否申请返校
+n   =  1
+# 是否在返校途中
+o   =  1
+# 是否返回学校所在地
+p   =  1
+# 本人电话
+r   =  152******
+# 紧急联系人姓名
+s   =  
+# 紧急联系人手机号
+t   = 
+# 您需要学校提供跟此次疫情相关的协助说明
+u   =   
+
+# 程序配置信息，误碰
+[System]
+verCodeApi = https://login.banjimofang.com/captcha/default
+loginGetApi = http://login.banjimofang.com/login/student/6?ssl=0&successuri=%2Fstudent%2Fuidlogin&append=ref%3D%252Fstudent
+loginPostApi = http://login.banjimofang.com/fields/login/student/6
+indexApi = https://htu.banjimofang.com/student

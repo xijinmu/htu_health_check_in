@@ -3,5 +3,5 @@
 img.png
 
 /cookies/cookies.txt
-/log/*
-/token/*
+/log/*.txt
+/token/*.txt

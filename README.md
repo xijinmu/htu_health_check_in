@@ -33,6 +33,24 @@ pip install -r requirements.txt
 2. 进入文件夹中，修改`./config/config.txt`文件中的各项配置，看注释，根据自己前一天的信息填写。
 3. 在根目录中解释执行`python ./run.py`
 
+#### 添加定时任务
+
+使用`crontab`定时任务。
+
+~~~bash
+crontab -e
+~~~
+
+在最末尾添加：
+
+~~~bash
+0 7 * * * /bin/python3 /home/ubuntu/qiandao/run.py
+~~~
+
+它的意思是在每天的七点整执行后面的命令，具体命令和路径参考自己的主机配置。
+
+![image-20210715021934438](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715021934.png)
+
 ### 使用云函数
 
 未测试

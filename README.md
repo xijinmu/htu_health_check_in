@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 本程序用户只需修改位于`/config/config.txt`是配置文件即可，然后使用Python解释运行根目录下的`/run.py`，如图所示：
 
-![1](./img/1.png)
+![1](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135219.png)
 
 下面将进行详细讲解如何获取和填写。
 
@@ -45,9 +45,9 @@ pip install -r requirements.txt
 
 进入`设置-账户`找到**POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV服务**，开启SMTP服务。然后点击生成授权码进行获取。
 
-![2](./img/2.png)
+![2](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135226.png)
 
-![3](.\img\3.png)
+![3](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135230.png)
 
 ### 百度智云ORC key
 
@@ -57,15 +57,15 @@ pip install -r requirements.txt
 
 打开网址 https://cloud.baidu.com/doc/OCR/s/9k3h7xuv6 点击领取免费资源，如果未注册登录则先注册登录。
 
-![4](.\img\4.png)
+![4](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135236.png)
 
 然后全选，全部领取即可。跳转到资源列表，点击**应用列表**，点击**新建应用**，输入应用名称即可获得`API Key`和`Secret Key`。只要保证数字识别在勾选着就可以了。
 
-![5](C:\Users\95690\Documents\myDocumnets\project\htu_health_check_in\img\5.png)
+![5](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135240.png)
 
-![6](C:\Users\95690\Documents\myDocumnets\project\htu_health_check_in\img\6.png)
+![6](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135247.png)
 
-![7](C:\Users\95690\Documents\myDocumnets\project\htu_health_check_in\img\7.png)
+![7](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135254.png)
 
 ### 签到信息
 

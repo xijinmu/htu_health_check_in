@@ -75,8 +75,9 @@ def getVerCode(url):
         # 传入URL，获取图片和Cookies
         imgRes = requests.get(url)
         img = imgRes.content
-        # 保存图片
-        saveImg(img)
+        if config["VerImg"]["saveImg"] == 'on':
+            # 保存图片
+            saveImg(img)
         orcRes = orcNumber(ApiKey, SecretKey, img)
         # orcRes = 2342
         # 写日志

@@ -84,6 +84,10 @@ signLog = on
 [Cookie]
 saveCookie = on
 
+# 是否保存最近一张验证码图片
+[VerImg]
+saveImg = off
+
 # 程序配置信息，误碰
 [System]
 verCodeApi = https://login.banjimofang.com/captcha/default

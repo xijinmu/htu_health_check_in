@@ -74,13 +74,6 @@ t   =
 # 您需要学校提供跟此次疫情相关的协助说明
 u   =   
 
-# 程序配置信息，误碰
-[System]
-verCodeApi = https://login.banjimofang.com/captcha/default
-loginGetApi = http://login.banjimofang.com/login/student/6?ssl=0&successuri=%2Fstudent%2Fuidlogin&append=ref%3D%252Fstudent
-loginPostApi = http://login.banjimofang.com/fields/login/student/6
-indexApi = https://htu.banjimofang.com/student
-
 # 开启为 on， 关闭为 off
 # 日志
 [Log]
@@ -98,3 +91,10 @@ saveImg = off
 # 是否存储orc token
 [token]
 saveToken = on
+
+# 程序配置信息，误碰
+[System]
+verCodeApi = https://login.banjimofang.com/captcha/default
+loginGetApi = http://login.banjimofang.com/login/student/6?ssl=0&successuri=%2Fstudent%2Fuidlogin&append=ref%3D%252Fstudent
+loginPostApi = http://login.banjimofang.com/fields/login/student/6
+indexApi = https://htu.banjimofang.com/student

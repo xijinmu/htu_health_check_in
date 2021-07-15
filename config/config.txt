@@ -1,34 +1,34 @@
 # 用户信息
 [UserInfo] 
 # 学号
-userid = 1928424171
+userid = 19******
 # 姓名
-name = 陈帅
+name = 姓名
 
 # 开启为 on， 关闭为 off
 [Mail]
 # 是否开启邮箱推送
 isOpen = on
 # 接受签到信息推送的邮箱
-receiver = 635767837@qq.com
+receiver = 635*****@qq.com
 # 第三方 SMTP 服务
 #设置服务器
-mail_host = smtp.88.com
+mail_host = smtp.qq.com
 #用户名
-mail_user = imchen@88.com
+mail_user = ****@qq.com
 #口令
-mail_pass = kskXMd9YgYuUCf3V
+mail_pass = kskXM*****
 
 # 百度智云 orc key
 [ORC]
-ApiKey = GLsslGiAIYTqEhbIFk3jFqL6
-SecretKey = 9eVz2KdhOULTdiL7Mgknrnn1flYCFAWS
+ApiKey = GLsslGi*****
+SecretKey = 9eVz2Kdh*****
 
 # 签到信息
 [QianDao]
 form_id  =  18400
 # 位置 直接复制上一次登录的地址即可
-v =  河南省,驻马店市,新蔡县,X002|32.81855,115.11861
+v =  河南省,***市,***县,X002|3*.81**,***5.****61
 # 0 为是，1为否
 # 是否接种过疫苗
 a   =  0
@@ -84,15 +84,15 @@ indexApi = https://htu.banjimofang.com/student
 # 开启为 on， 关闭为 off
 # 日志
 [Log]
-orcLog = off
-signLog = off
+orcLog = on
+signLog = on
 
 # 是否启用Cookies存储
 [Cookie]
-saveCookie = off
+saveCookie = on
 
 [VerImg]
 saveImg = off
 
 [token]
-saveToken = off
+saveToken = on

@@ -111,7 +111,21 @@ crontab -e
 
 ### 使用云函数
 
-未测试
+> 注意：请先仔细阅读**使用指南**，并**配置好配置文件**之后在进行下面的操作。
+
+使用腾讯云函数https://cloud.tencent.com/product/scf 的免费资源进行部署。首先，注册和登录请自行操作，之后我将进行具体的演示。
+
+#### 新建函数服务
+
+在控制面板中新建自定义函数。
+
+![image-20210715171018887](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715171018.png)
+
+创建方式选择自定义创建，然后填写基本配置。
+
+![image-20210715171324625](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715171324.png)
+
+
 
 ## 几个要点
 

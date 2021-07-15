@@ -28,7 +28,11 @@ Table of Contents
 
 ## 介绍
 
-本程序可以自动的健康打卡，将其部署在服务器中即可
+本程序可以实现河南师范大学移动学工平台的每日健康打卡功能。主要有以下特点：
+
+1. 配置简单：所有的配置都位于`/config/config.txt`配置文件中，多快好省。
+2. 邮箱推送：实现的打卡信息的邮箱推送，以知道自己是否打卡成功。（失败则不会发送）
+3. 支持云函数部署：无需服务器，省时省力省金钱。
 
 ## 环境要求
 
@@ -41,7 +45,7 @@ Table of Contents
    3. `beautifulsoup4`
    4. `configparser`
 
-直接使用命令统一安装包，`requirements.txt`在项目根目录。
+统一安装，使用`requirements.txt`文件在项目根目录中，执行下面的命令即可安装所需的所有包。
 
 ~~~bash
 pip install -r requirements.txt
@@ -89,6 +93,8 @@ pip install -r requirements.txt
 
 然后全选，全部领取即可。跳转到资源列表，点击**应用列表**，点击**新建应用**，输入应用名称即可获得`API Key`和`Secret Key`。只要保证数字识别在勾选着就可以了。
 
+>  注意：未实名用户只有200次/月，请进行个人中心进行的个人实名认证！
+
 ![5](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135240.png)
 
 ![6](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135247.png)
@@ -99,11 +105,11 @@ pip install -r requirements.txt
 
 下面的就是签到打卡的信息了。按照注释的说明进行填写即可。在这里，0代表**是**，1代表**否**，其余的看注释即可。位置信息复制上一次打卡的定位信息。
 
-### 日志和开启Cookies存储
+### 日志，Cookies 等项目的存储控制
 
-配置文件的下面可以开启日志和Cookies登录，开启为`on`，关闭为`off`。可以根据需要配置。在一些云函数机器中可能没有写入权限，这是则可以关闭这些功能。
+默认开启日志和Cookies登录，开启为`on`，关闭为`off`。可以根据需要配置。如果部署再自己的服务器中则建议开启，这样可以减少资源的消耗。但是如果部署在云函数中，由于程序没有写入权限，则需要将下列功能全部关闭`off`。具体后面的部署小节中会进行说明。
 
-![8](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135448.png)
+![image-20210715232321380](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715232321.png)
 
 ## 部署
 
@@ -129,6 +135,8 @@ crontab -e
 0 7 * * * * /bin/python3 /home/ubuntu/qiandao/run.py
 ~~~
 
+后面修改为自己程序的路径！根据自己的实际情况进行修改。
+
 具体语法，参考[Cron表达式语法详解](https://blog.csdn.net/lianjunzongsiling/article/details/82228655)
 
 ### 使用云函数
@@ -147,7 +155,7 @@ crontab -e
 
 ![image-20210715171018887](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715171018.png)
 
-创建方式选择自定义创建，然后填写基本配置。
+创建方式选择自定义创建，然后填写基本配置，函数名称随意，运行环境选择`Python3.6`。
 
 ![image-20210715171324625](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715171324.png)
 
@@ -155,7 +163,7 @@ crontab -e
 
 ![image-20210715172157112](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715172157.png)
 
-之后上传改文件夹。在`执行方法`中填入`run.yunRun`。
+之后上传该文件夹。在`执行方法`中填入`run.yunRun`。
 
 ![image-20210715172333021](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715172333.png)
 
@@ -171,7 +179,7 @@ crontab -e
 
 #### 测试
 
-测试以下执行效果。点击**函数代码**，下滑找到**测试**和**部署**，点击测试即可开始运行。
+测试执行效果。点击**函数代码**，下滑找到**测试**和**部署**，点击测试即可开始运行。
 
 ![image-20210715173302341](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715173302.png)
 

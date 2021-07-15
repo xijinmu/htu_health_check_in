@@ -80,7 +80,7 @@ def loginUseCookie(config, session):
             return False
 
 # 返回用户信息的字典
-# 包括 data_post_url college name
+# 包括 data_post_url college name cookies
 def returnInfo(response):
     soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -102,7 +102,8 @@ def returnInfo(response):
     userInfo = {
         "daka_post_url": daka_url,
         "college": college,
-        "name": name
+        "name": name,
+        "cookies": response.cookies.get_dict()
     }
 
     return userInfo
@@ -112,6 +113,7 @@ def returnInfo(response):
     daka_post_url
     college
     name
+    cookies
 '''
 def Login():
     session = requests.session()
@@ -138,7 +140,7 @@ def Login():
     else:
         res = reLogin(config, session)
         if res:
-            print("登录登录成功！")
+            print("登录成功！")
             return returnInfo(res)
         else:
             return False

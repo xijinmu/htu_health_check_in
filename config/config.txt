@@ -1,34 +1,34 @@
 # 用户信息
 [UserInfo] 
 # 学号
-userid = 19*****
+userid = 1928424171
 # 姓名
-name = 姓名
+name = 陈帅
 
 # 开启为 on， 关闭为 off
 [Mail]
 # 是否开启邮箱推送
 isOpen = on
 # 接受签到信息推送的邮箱
-receiver = 635****@qq.com
+receiver = 635767837@qq.com
 # 第三方 SMTP 服务
 #设置服务器
-mail_host = smtp.qq.com
+mail_host = smtp.88.com
 #用户名
-mail_user = name***@qq.com
+mail_user = imchen@88.com
 #口令
-mail_pass = kskXMd*****
+mail_pass = kskXMd9YgYuUCf3V
 
 # 百度智云 orc key
 [ORC]
-ApiKey = GLsslGi*******
-SecretKey = 9eVz2Kd******
+ApiKey = GLsslGiAIYTqEhbIFk3jFqL6
+SecretKey = 9eVz2KdhOULTdiL7Mgknrnn1flYCFAWS
 
 # 签到信息
 [QianDao]
 form_id  =  18400
 # 位置 直接复制上一次登录的地址即可
-v =  河南省,***市,**县,X002|32.***5,1**.11861
+v =  河南省,驻马店市,新蔡县,X002|32.81855,115.11861
 # 0 为是，1为否
 # 是否接种过疫苗
 a   =  0
@@ -74,23 +74,25 @@ t   =
 # 您需要学校提供跟此次疫情相关的协助说明
 u   =   
 
-# 开启为 on， 关闭为 off
-# 日志
-[Log]
-orcLog = on
-signLog = on
-
-# 是否启用Cookies存储
-[Cookie]
-saveCookie = on
-
-# 是否保存最近一张验证码图片
-[VerImg]
-saveImg = off
-
 # 程序配置信息，误碰
 [System]
 verCodeApi = https://login.banjimofang.com/captcha/default
 loginGetApi = http://login.banjimofang.com/login/student/6?ssl=0&successuri=%2Fstudent%2Fuidlogin&append=ref%3D%252Fstudent
 loginPostApi = http://login.banjimofang.com/fields/login/student/6
 indexApi = https://htu.banjimofang.com/student
+
+# 开启为 on， 关闭为 off
+# 日志
+[Log]
+orcLog = off
+signLog = off
+
+# 是否启用Cookies存储
+[Cookie]
+saveCookie = off
+
+[VerImg]
+saveImg = off
+
+[token]
+saveToken = off

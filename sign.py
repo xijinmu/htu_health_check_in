@@ -61,11 +61,10 @@ def Msg(signRes):
     return msg
 
 # 签到Post
-def Post(session, postApi, config):
+def Post(session, postApi, config, cookies):
     
     # 获取信息
     head, body = makeInfo(config)
-    cookies = getCookieFromFile()
     # 签到Post
     signRes = session.post(postApi, headers=head, data = body, cookies = cookies)
     # print(signRes.text)
@@ -120,7 +119,9 @@ def sign():
     # Post APi
     postUrl = Info["daka_post_url"]
     # 签到
-    signRes = Post(session, postUrl, config)
+    # cookies
+    cookies = Info["cookies"]
+    signRes = Post(session, postUrl, config, cookies)
     # 打印用户提示信息
     msg = Msg(signRes)
     if config["Log"]["signLog"] == 'on':

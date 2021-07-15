@@ -11,31 +11,39 @@ def saveImg(img):
     return img
 
 def getAccessToken(ApiKey, SecretKey):
+    config = configparser.RawConfigParser()
+    config.read("./config/config.txt", encoding="UTF-8")
     # 获取日期
     localtime = time.strftime("%Y-%m-%d", time.localtime())
     # 如果token已经存在,则直接读取,否则重新获取写入
     try:
-
-        with open("./token/access_token.text", "r", encoding="UTF-8") as f:
-            access_dict = json.loads(f.read().replace("'", '"'))
-            # 如果日期登录今天，则直接使用，否则抛出异常重新获取
-            if access_dict["time"] == localtime:
-                return access_dict["access_token"]
-            else:
-                raise FileNotFoundError
+        # 如果开启saveToken，则读取
+        if config["token"]["saveToken"] == 'on':
+            with open("./token/access_token.text", "r", encoding="UTF-8") as f:
+                access_dict = json.loads(f.read().replace("'", '"'))
+                # 如果日期登录今天，则直接使用，否则抛出异常重新获取
+                if access_dict["time"] == localtime:
+                    return access_dict["access_token"]
+                else:
+                    raise FileNotFoundError
+        else:
+            raise FileNotFoundError
     except:
         print("调用API获取token")
         # client_id 为官网获取的AK， client_secret 为官网获取的SK
         host = f'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id={ApiKey}&client_secret={SecretKey}'
         response = requests.get(host)
         if response:
-            with open("./token/access_token.text", "w", encoding="UTF-8") as f:
-                access_token = response.json()["access_token"]
-                access_dict = {
-                    "time":localtime,
-                    "access_token": access_token
-                }
-                f.write(str(access_dict))
+            # 如果开启token存储
+            if config["token"]["saveToken"] == 'on':
+                with open("./token/access_token.text", "w", encoding="UTF-8") as f:
+                    access_token = response.json()["access_token"]
+                    access_dict = {
+                        "time":localtime,
+                        "access_token": access_token
+                    }
+                    f.write(str(access_dict))
+            # 否则直接返回
             return response.json()["access_token"]
         else:
             print("Error in getAccessToken of orc.py!")

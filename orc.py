@@ -1,3 +1,4 @@
+import configparser
 import json
 import requests
 import base64
@@ -64,8 +65,10 @@ def wirteLog(words_result):
         f.writelines(localtime +' ' + words_result+'\n')
 
 def getVerCode(url):
-    ApiKey = "GLsslGiAIYTqEhbIFk3jFqL6"
-    SecretKey = "9eVz2KdhOULTdiL7Mgknrnn1flYCFAWS"
+    config = configparser.RawConfigParser()
+    config.read("./config/config.txt", encoding="UTF-8")
+    ApiKey = config["ORC"]["ApiKey"]
+    SecretKey = config["ORC"]["SecretKey"]
     success = False
     while success == False:
         # 传入URL，获取图片和Cookies
@@ -76,7 +79,8 @@ def getVerCode(url):
         orcRes = orcNumber(ApiKey, SecretKey, img)
         # orcRes = 2342
         # 写日志
-        wirteLog(str(orcRes))
+        if config["Log"]["orcLog"] == 'on':
+            wirteLog(str(orcRes))
         try:
             verCode = orcRes["words_result"][0]["words"]
             # return imgRes

@@ -43,9 +43,10 @@ def reLogin(config, session):
         # 如果登录成功
         isSuccess = isLoginSuccess(response)
         if isSuccess == True:
-            # 更新Cookies文件
-            with open("./cookies/cookies.txt", "w") as f:
-                f.write(str(response.cookies.get_dict()).replace("'",'"'))
+            if config["Cookie"]["saveCookie"] == 'on':
+                # 更新Cookies文件
+                with open("./cookies/cookies.txt", "w") as f:
+                    f.write(str(response.cookies.get_dict()).replace("'",'"'))
             # 返回课程主页的 response
             return response
         # 如果是验证码错误，则重试
@@ -118,18 +119,29 @@ def Login():
     config.read("./config/config.txt", encoding="UTF-8")
     # userConfig = config.getUserConfig()
     # systemConfig = config.getSystemConfig()
-    # 首先使用cookies进行登录
-    res = loginUseCookie(config, session)
-    if res:
-        print("Cookies登录成功！")
-        return returnInfo(res)
+    # 如果开启Cookie
+    if config["Cookie"]["saveCookie"] == 'on':
+        # 首先使用cookies进行登录
+        res = loginUseCookie(config, session)
+        if res:
+            print("Cookies登录成功！")
+            return returnInfo(res)
+        else:
+            res = reLogin(config, session)
+            if res:
+                print("重新登录成功！cookies文件已更新！")
+                return returnInfo(res)
+            else:
+                return False
+    # 如果没开启Cookie
     else:
         res = reLogin(config, session)
         if res:
-            print("重新登录成功！cookies文件已更新！")
+            print("登录登录成功！")
             return returnInfo(res)
         else:
             return False
+
 
 
 if __name__=='__main__':

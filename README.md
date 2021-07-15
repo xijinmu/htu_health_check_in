@@ -25,7 +25,57 @@
 pip install -r requirements.txt
 ~~~
 
-## 使用方法
+## 使用指南
+
+本程序用户只需修改位于`/config/config.txt`是配置文件即可，然后使用Python解释运行根目录下的`/run.py`，如图所示：
+
+![1](./img/1.png)
+
+下面将进行详细讲解如何获取和填写。
+
+> 注意：这里等号后面的值都无需加引号
+
+### 用户信息 UserInfo
+
+这里填写你的学号和真实姓名。userid是学号，name是姓名。
+
+### 邮箱配置 Mail
+
+这里主要用于每日的打卡情况推送，可以关闭或开启。打卡信息会由第三方SMTP服务器发送到`receiver`所指定的邮箱中。这里以QQ邮箱为例，展示如何获取这些信息。QQ邮箱的smtp服务器是 `smtp.qq.com`，用户名就算你的账户名，口令需要进入QQ邮箱设置中获取。
+
+进入`设置-账户`找到**POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV服务**，开启SMTP服务。然后点击生成授权码进行获取。
+
+![2](./img/2.png)
+
+![3](.\img\3.png)
+
+### 百度智云ORC key
+
+由于登录使用了图形验证码进行验证，所以需要进行ORC识别实现自动登录功能。这里使用百度智云的ORC服务，认证用户每月有1000次的免费次数，对于30天打卡足够了。
+
+在这里，我们需要获取`ApiKey`和`SecretKey`这两个键的值。
+
+打开网址 https://cloud.baidu.com/doc/OCR/s/9k3h7xuv6 点击领取免费资源，如果未注册登录则先注册登录。
+
+![4](.\img\4.png)
+
+然后全选，全部领取即可。跳转到资源列表，点击**应用列表**，点击**新建应用**，输入应用名称即可获得`API Key`和`Secret Key`。只要保证数字识别在勾选着就可以了。
+
+![5](C:\Users\95690\Documents\myDocumnets\project\htu_health_check_in\img\5.png)
+
+![6](C:\Users\95690\Documents\myDocumnets\project\htu_health_check_in\img\6.png)
+
+![7](C:\Users\95690\Documents\myDocumnets\project\htu_health_check_in\img\7.png)
+
+### 签到信息
+
+下面的就是签到打卡的信息了。按照注释的说明进行填写即可。在这里，0代表**是**，1代表**否**，其余的看注释即可。位置信息复制上一次打卡的定位信息。
+
+### 日志和开启Cookies存储
+
+配置文件的下面可以开启日志和Cookies登录，开启为`on`，关闭为`off`。可以根据需要配置。在一些云函数机器中可能没有写入权限，这是则可以关闭这些功能。
+
+## 部署
 
 ### 自己服务器
 

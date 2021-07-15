@@ -103,7 +103,7 @@ def sendMail(Info, msg, config):
     </body>
 </html>
 '''
-    mail.sendMail(config["UserInfo"]["mail"], htmlMsg)
+    mail.sendMail(config, htmlMsg)
 
 def sign():
     session = requests.session()
@@ -122,8 +122,10 @@ def sign():
     signRes = Post(session, postUrl, config)
     # 打印用户提示信息
     msg = Msg(signRes)
-    log(Info, msg)
-    sendMail(Info, msg, config)
+    if config["Log"]["signLog"] == 'on':
+        log(Info, msg)
+    if config["Mail"]["isOpen"] == 'on':
+        sendMail(Info, msg, config)
 
 if __name__=='__main__':
     sign()

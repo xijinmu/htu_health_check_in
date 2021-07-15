@@ -75,6 +75,8 @@ pip install -r requirements.txt
 
 配置文件的下面可以开启日志和Cookies登录，开启为`on`，关闭为`off`。可以根据需要配置。在一些云函数机器中可能没有写入权限，这是则可以关闭这些功能。
 
+![8](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135448.png)
+
 ## 部署
 
 ### 自己服务器

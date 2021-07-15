@@ -91,8 +91,10 @@ signLog = on
 [Cookie]
 saveCookie = on
 
+# 是否存储最近一次的验证码图片
 [VerImg]
 saveImg = off
 
+# 是否存储orc token
 [token]
 saveToken = on

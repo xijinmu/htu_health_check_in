@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ## 使用指南
 
-本程序用户只需修改位于`/config/config.txt`是配置文件即可，然后使用Python解释运行根目录下的`/run.py`，如图所示：
+本程序用户只需修改位于`/config/config.txt`的配置文件即可，然后使用Python解释运行根目录下的`/run.py`，如图所示：
 
 ![1](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135219.png)
 

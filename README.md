@@ -37,9 +37,13 @@ pip install -r requirements.txt
 
 ### 用户信息 UserInfo
 
+![image-20210715135928868](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135928.png)
+
 这里填写你的学号和真实姓名。userid是学号，name是姓名。
 
 ### 邮箱配置 Mail
+
+![image-20210715135951318](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135951.png)
 
 这里主要用于每日的打卡情况推送，可以关闭或开启。打卡信息会由第三方SMTP服务器发送到`receiver`所指定的邮箱中。这里以QQ邮箱为例，展示如何获取这些信息。QQ邮箱的smtp服务器是 `smtp.qq.com`，用户名就算你的账户名，口令需要进入QQ邮箱设置中获取。
 
@@ -50,6 +54,8 @@ pip install -r requirements.txt
 ![3](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715135230.png)
 
 ### 百度智云ORC key
+
+![image-20210715140017294](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715140017.png)
 
 由于登录使用了图形验证码进行验证，所以需要进行ORC识别实现自动登录功能。这里使用百度智云的ORC服务，认证用户每月有1000次的免费次数，对于30天打卡足够了。
 

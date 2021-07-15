@@ -1,3 +1,4 @@
+# -*- coding:UTF-8 -*-
 import configparser
 import json
 import requests

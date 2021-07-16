@@ -129,13 +129,13 @@ pip install -r requirements.txt
 crontab -e
 ~~~
 
-在最末尾添加：
+在最末尾添加:
 
 ~~~bash
-0 7 * * * * /bin/python3 /home/ubuntu/qiandao/run.py
+0 10 7 * * * /bin/python3 /home/ubuntu/qiandao/run.py
 ~~~
 
-后面修改为自己程序的路径！根据自己的实际情况进行修改。
+这里代表每天的七点十分零秒执行后面的命令，注意后面修改为自己程序的路径！根据自己的实际情况进行修改。
 
 具体语法，参考[Cron表达式语法详解](https://blog.csdn.net/lianjunzongsiling/article/details/82228655)
 

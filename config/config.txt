@@ -16,7 +16,7 @@ receiver = 635*****@qq.com
 mail_host = smtp.qq.com
 #用户名
 mail_user = ****@qq.com
-#口令
+#口令（授权码）
 mail_pass = kskXM*****
 
 # 百度智云 orc key

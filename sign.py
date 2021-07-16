@@ -51,13 +51,10 @@ def getCookieFromFile():
 # 打印提示信息
 def Msg(signRes):
     soup = BeautifulSoup(signRes.text, 'html.parser')
-    msg = ""
-    if "提示" in signRes.text:
+    msg = "打卡成功！"
+    if "新增失败" in signRes.text:
         msg = soup.find_all("div")[3].string
-        print(msg)
-    else:
-        msg = "打卡成功!"
-        print(msg)
+    print(msg)
     return msg
 
 # 签到Post

@@ -171,11 +171,11 @@ crontab -e
 
 ![image-20210715172532508](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715172532.png)
 
-最后，点击完成！然后跳转至函数配置页面。之后点击**编辑**，向下找到`环境配置-执行超时时间`将其设置为20秒。然后在下面点击保存。
+最后，点击完成！然后跳转至函数配置页面。之后点击**编辑**，向下找到`环境配置-执行超时时间`将其设置为100秒。然后在下面点击保存。
 
 ![image-20210715172945548](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715172945.png)
 
-![image-20210715173124825](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210715173124.png)
+![image-20210716095323029](https://cdn.jsdelivr.net/gh/easechen/blog-img/img/20210716095323.png)
 
 #### 测试
 

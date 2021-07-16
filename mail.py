@@ -28,5 +28,7 @@ def sendMail(config, htmlMsg):
         smtpObj.login(mail_user,mail_pass)  
         smtpObj.sendmail(sender, receivers, message.as_string())
         print ("邮件发送成功")
-    except smtplib.SMTPException:
+    except smtplib.SMTPException as e:
+        # 打印错误
+        print(e)
         print ("Error: 无法发送邮件")

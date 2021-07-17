@@ -58,6 +58,9 @@ def orcNumber(ApiKey, SecretKey, img):
     # 获取acess_token
     access_token = getAccessToken(ApiKey, SecretKey)
     # print(f'access_token={access_token}')
+    if access_token == None:
+        print("为设置ORC，请参照文档于配置文件中设置！")
+        exit(1)
     request_url = request_url + "?access_token=" + access_token
     headers = {'content-type': 'application/x-www-form-urlencoded'}
     response = requests.post(request_url, data=params, headers=headers)

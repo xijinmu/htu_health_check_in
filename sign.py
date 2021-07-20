@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 import configparser
 import login
-import time
+import getBeijingTime
 import mail
 
 # 构造信息
@@ -70,7 +70,7 @@ def Post(session, postApi, config, cookies):
 
 def log(Info, msg):
     logDict = {
-        "time": time.asctime( time.localtime(time.time()) ),
+        "time": getBeijingTime.getBeijingTimeStr(),
         "user": Info["name"],
         "msg": msg
     }
@@ -96,7 +96,7 @@ def sendMail(Info, msg, config):
         打卡信息：<font size="4" color="red">{msg}</font>
         <br>
         <br>
-        时间：<font size="3" color="red">{time.asctime( time.localtime(time.time()) )}</font>
+        时间：<font size="3" color="red">{getBeijingTime.getBeijingTimeStr()}</font>
     </body>
 </html>
 '''

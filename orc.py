@@ -3,7 +3,7 @@ import configparser
 import json
 import requests
 import base64
-import time
+import getBeijingTime
 
 def saveImg(img):
     with open('./img.png', 'wb') as f:
@@ -14,7 +14,7 @@ def getAccessToken(ApiKey, SecretKey):
     config = configparser.RawConfigParser()
     config.read("./config/config.txt", encoding="UTF-8")
     # 获取日期
-    localtime = time.strftime("%Y-%m-%d", time.localtime())
+    localtime = getBeijingTime.getBeijingTime().strftime("%Y-%m-%d")
     # 如果token已经存在,则直接读取,否则重新获取写入
     try:
         # 如果开启saveToken，则读取
@@ -72,7 +72,7 @@ def orcNumber(ApiKey, SecretKey, img):
 # 日志写入函数
 def wirteLog(words_result):
     # 获取当前本地时间
-    localtime = time.asctime( time.localtime(time.time()) )
+    localtime = getBeijingTime.getBeijingTimeStr()
     with open('./log/orcLog.txt', 'a+') as f:
         f.writelines(localtime +' ' + words_result+'\n')
 
